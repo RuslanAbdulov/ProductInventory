@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/inventory")
 public class InventoryController {
 
     private final InventoryService productService;
@@ -19,7 +19,7 @@ public class InventoryController {
     }
 
     @GetMapping("")
-    public List<ProductInventory> productsBySku2(@RequestParam(name = "uniq_ids") List<String> ids) {
+    public List<ProductInventory> productsBySku(@RequestParam(name = "uniq_ids") List<String> ids) {
         return productService.findByIds(ids);
     }
 
