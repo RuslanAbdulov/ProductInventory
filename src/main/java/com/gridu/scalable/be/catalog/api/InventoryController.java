@@ -22,7 +22,7 @@ public class InventoryController {
     public List<ProductInventory> productsBySku(@RequestParam(name = "uniq_ids") List<String> ids)
             throws InterruptedException {
 
-        Thread.sleep((long) (Math.random() * 10000));
+        Thread.sleep((long) (Math.random() * 2000));
         return productService.findByIds(ids);
     }
 
