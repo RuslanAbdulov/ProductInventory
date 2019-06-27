@@ -19,7 +19,10 @@ public class InventoryController {
     }
 
     @GetMapping("")
-    public List<ProductInventory> productsBySku(@RequestParam(name = "uniq_ids") List<String> ids) {
+    public List<ProductInventory> productsBySku(@RequestParam(name = "uniq_ids") List<String> ids)
+            throws InterruptedException {
+
+        Thread.sleep((long) (Math.random() * 10000));
         return productService.findByIds(ids);
     }
 
